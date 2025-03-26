@@ -1,7 +1,7 @@
 
 # Cappcert
 
-Demo FastAPI aplikácia pre firmu EuroCoc na správu a generovanie certifikátov zhody (COC).
+Demo FastAPI aplikácia na správu a generovanie certifikátov zhody (COC).
 
 
 Endpointy:

@@ -9,4 +9,4 @@ Endpointy:
 - POST `/generate/` – vygeneruj PDF certifikát zo zadaných údajov
 
 Vyžaduje:
-- Google Cloud Vision API kľúč (nastavený ako GOOGLE_APPLICATION_CREDENTIALS)
+- Google Cloud Vision AI API kľúč (nastavený ako GOOGLE_APPLICATION_CREDENTIALS)

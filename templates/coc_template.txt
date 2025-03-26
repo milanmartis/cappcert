@@ -1,0 +1,1 @@
+Certifikát zhody pre vozidlo {{ model }} s VIN {{ vin }}

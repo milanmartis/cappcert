@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cappcert Generator</title>
+  <link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+<div class="wrapper">
+    <div class="box">
+        <h1>CAPP</h1>
+        <h3>COC GENERATOR</h3>
+
+    </div>
+
+    <div class="box">
+        <form id="certForm">
+            <label><input type="text" name="model" placeholder="Vehicle Model" required></label>
+            <label><input type="text" name="vin" placeholder="VIN" required></label>
+            <label><input type="text" name="manufacturer" placeholder="Manufacturer" required></label><br>
+            <label><button type="submit">Ganerate Certificate</button></label>
+        </form>
+    </div>
+
+    <div class="box">
+        <div id="result"></div>
+    </div>
+</div>
+
+
+  <script>
+    document.getElementById('certForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const json = Object.fromEntries(formData.entries());
+
+      const response = await fetch('/generate/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(json),
+      });
+
+      const result = await response.json();
+      document.getElementById('result').innerHTML = `
+        <p>${result.message}</p>
+        <p><a href="${result.path}" target="_blank">Stiahnuť PDF</a></p>
+      `;
+    });
+  </script>
+</body>
+</html>

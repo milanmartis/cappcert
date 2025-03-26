@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  cappcert:
+    build: .
+    ports:
+      - "8001:8001"
+    volumes:
+      - .:/app
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/key.json
+    restart: unless-stopped

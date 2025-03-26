@@ -1,0 +1,8 @@
+
+fastapi
+uvicorn
+jinja2
+reportlab
+google-cloud-vision
+google-cloud-storage
+python-multipart
